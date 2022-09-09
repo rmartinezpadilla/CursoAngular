@@ -1,0 +1,18 @@
+<p>Nombres: <strong>{{nombre}}</strong></p>
+<p>Apellidos: <strong>{{apellido}}</strong></p>
+<p>Edad: <strong>{{getEdad()<18 ? "Menor de edad" : "Mayor de edad"}}</strong></p>
+<p>Empresa: <strong>{{empresa.value}}</strong></p>
+
+<p>Introduce el nombre de la empresa</p>
+<input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="visibilidad">
+<!--
+<br>
+<input type="button" value="Enviar" id="enviar" (click)="cambiaEmpresa(empresa.value)">
+-->
+<br/>
+Registrado: <input type="checkbox" name="registrado" id="registrado" [checked]="usuarioRegistrado">
+
+{{getCambiarCheckUsuarioregistrado()}}
+
+
+
