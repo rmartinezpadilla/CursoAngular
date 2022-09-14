@@ -1,17 +1,39 @@
 <p>Nombres: <strong>{{nombre}}</strong></p>
 <p>Apellidos: <strong>{{apellido}}</strong></p>
 <p>Edad: <strong>{{getEdad()<18 ? "Menor de edad" : "Mayor de edad"}}</strong></p>
-<p>Empresa: <strong>{{empresa.value}}</strong></p>
 
+  <p>Empresa: <strong>{{empresa}}</strong></p>
+
+<!--
+  <p>Empresa: <strong>{{empresa.value}}</strong></p>
 <p>Introduce el nombre de la empresa</p>
 <input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="visibilidad">
-<!--
+
 <br>
 <input type="button" value="Enviar" id="enviar" (click)="cambiaEmpresa(empresa.value)">
 -->
-<br/>
-Registrado: <input type="checkbox" name="registrado" id="registrado" [checked]="usuarioRegistrado">
 
+<!-- para poder usar la libreria ngModel debemos importar el elemento FormsModule en el archivo app.modelue.ts del proyecto-->
+Escribe la empresa: <input type="text" [(ngModel)]="empresa" >
+<br/>
+
+<p>Estado:  {{textoDeregistro}}</p>
+
+<br>
+
+<!--Registrado: <input type="checkbox" name="registrado" id="registrado" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado()" >-->
+
+<!--esto es un ejemplo de un metodo sin parametros-->
+<!--Registrado <input type="radio" name="n_registro" (click)="setUsuarioRegistrado()">-->
+Registrado <input type="radio" name="n_registro" value="si" (click)="setUsuarioRegistrado($event)">
+<br>
+No Registrado <input type="radio" name="n_registro" value="no" (click)="setUsuarioRegistrado($event)">
+
+<br>
+
+<p>Practicando un mensaje: <Strong style="color: red;">{{esteEsElNuevoMensaje}}</Strong></p>
+
+<p style="color: blue;" (mouseover)="pasasteElMouse($event)" (mouseout)="quitasteElMouse($event)">Por favor no pases el mouse por aquí, algo puede pasar</p>
 {{getCambiarCheckUsuarioregistrado()}}
 
 
