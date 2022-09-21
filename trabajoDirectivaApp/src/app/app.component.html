@@ -32,9 +32,25 @@
     <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="apellido">
   </div>
 
+  <div class="mb-3">
+    <label class="form-label">Cargo</label>
+    <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo">
+  </div>
+
   <button type="submit" class="btn btn-primary" (click)="registrarUsuario()">Registrar</button>
 </form>
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}}</p>
+
+<h5>esto lo pintamos usando ng-Style</h5>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}}
+  y tiene el cargo de <span [ngStyle]="{color: cargo=='empleado' ? 'red' : 'blue' }"> {{cargo}}</span>
+
+</p>
+
+<h5>esto lo pintamos usando ng-Class</h5>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}}
+  y tiene el cargo de <span [ngClass]="{paraDirectores: cargo=='empleado'}"> {{cargo}}</span>
+
+</p>
 <ng-template #sinRegistrar>
   <p>nadie registrado.</p>
 

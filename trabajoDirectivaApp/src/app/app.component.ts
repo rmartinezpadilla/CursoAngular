@@ -10,6 +10,7 @@ export class AppComponent {
   mensajeDelFormulario="Registro de usuarios";
   nombre:string="";
   apellido:string="";
+  cargo:string="";
   mensaje="";
   registrado=false;
   entradas: string []= ["Esto es un ejemplo", " de una lista", "Otro ejemplos"];

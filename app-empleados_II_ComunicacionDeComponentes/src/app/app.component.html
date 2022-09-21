@@ -1,0 +1,21 @@
+<div class="container">
+  <div>{{titulo}}</div>
+  <div class="row">
+    <div class="col">
+      <form class="form-group col-md-12">
+        <div class="mb-3">
+          <label class="form-label">Nombres</label>
+          <input type="text" class="form-control" name="nombres" id="nombres" [(ngModel)]="cuadroNombre">
+          <label class="form-label">Apellidos</label>
+          <input type="text" class="form-control" name="apellidos" id="apellidos" [(ngModel)]="cuadroApellido"><label class="form-label">Cargo</label>
+          <input type="text" class="form-control" name="cargo" id="cargo" [(ngModel)]="cuadroCargo">
+          <label class="form-label">Salario</label>
+          <input type="number" class="form-control" name="salario" id="salario" [(ngModel)]="cuadroSalario">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="almacenarEmpleado()">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!--INCLUIMOS EL COMPONENTE HIJO DENTRO DEL COMPONENTE PADRE-->
+      <app-empleado-hijo-component *ngFor="let empleado of empleados; let i=index" [empleadoDeLista]="empleado" [iteracion]="i"></app-empleado-hijo-component>
